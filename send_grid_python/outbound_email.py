@@ -33,8 +33,8 @@ def send_email_message(
     }
     email_message.template_id = sendgrid_env("template_id")
     try:
-        sendgrid_client = SendGridAPIClient(sendgrid_env("SENDGRID_API_KEY"))
-        email_response = sendgrid_client.send(email_message)
+        sendgrid_client = SendGridAPIClient(api_key=sendgrid_env("SENDGRID_API_KEY"))
+        email_response = sendgrid_client.send(message=email_message)
         LOGGER.info(
             "Successfully sent the email with response status code: %s",
             email_response.status_code,
