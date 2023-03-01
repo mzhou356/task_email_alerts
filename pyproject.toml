@@ -1,0 +1,12 @@
+[tool.pylint.messages_control]
+max-line-length=88
+
+[tool.black]
+target-version = ["py39"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
