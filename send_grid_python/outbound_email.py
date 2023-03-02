@@ -1,5 +1,6 @@
 """This module uses simple SendGrid API to send email via a local FlaskApp."""
 import logging
+
 from environs import Env
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
