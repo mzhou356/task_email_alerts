@@ -14,6 +14,7 @@ def send_email_message(
     subject: str,
     task: str,
     deadline: str,
+    **kwargs,
 ) -> None:
     """
     This function sends a task reminder email
@@ -21,10 +22,14 @@ def send_email_message(
         subject (str): The subject of the email reminder.
         task (str): The task information: example, update your bank account password.
         deadline (str): 2023-10-21.
+        **kwargs: if wants to pass in custom to_emails or custom from_emails.
     """
+    from_email = kwargs.get("from_email", sendgrid_env("from_email"))
+    to_emails = kwargs.get("to_emails", sendgrid_env.list("to_emails"))
 
     email_message = Mail(
-        from_email=sendgrid_env("from_email"), to_emails=sendgrid_env.list("to_emails")
+        from_email=from_email,
+        to_emails=to_emails,
     )
     email_message.dynamic_template_data = {
         "subject": subject,
