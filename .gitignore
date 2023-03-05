@@ -131,3 +131,6 @@ dmypy.json
 email_alert_env/*
 send_grid_python/.env
 .idea/
+*logs
+airflow_setup/airflow.cfg
+airflow_setup/.env
