@@ -10,7 +10,5 @@ python3.8 get-pip.py --user
 python3.8 -m venv email_alert_env
 source email_alert_env/bin/activate
 pip install -r requirements.txt
-crontab -l | \
-echo  '49 00  * * * ~/task_email_alerts/email_alert_env/bin/python3 task_email_alerts/main.py \
---subject mindy-test --task "test" --deadline "nodeadline" --to_emails "minzhou16@gmail.com,white6dove@gmail.com" \
-1>log 2>error' | crontab -
+cd
+crontab -l | cat cron_file_copy.txt | crontab -
