@@ -134,3 +134,4 @@ send_grid_python/.env
 *logs
 airflow_setup/airflow.cfg
 airflow_setup/.env
+cron_file_copy.txt
