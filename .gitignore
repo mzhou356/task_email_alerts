@@ -135,3 +135,4 @@ send_grid_python/.env
 airflow_setup/airflow.cfg
 airflow_setup/.env
 cron_file_copy.txt
+ec2_cloud_formation_template.yaml
